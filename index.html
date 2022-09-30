@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+    <script src="./script.js"></script>
+		
+  </head>
 
-<body>
+  <body style="background-color: #1c1b24">
+    <section>
+      <form id="form">
+        <input type="text" name="name" id="name" placeholder="Name" />
+        <input type="date" name="date" id="date" placeholder="Date" />
+        <input type="number" name="value" id="value" placeholder="Value" />
+        <input type="string" name="store" id="store" placeholder="Store" />
+				
+        <!--    <div> -->
+        <label for="categories">Category</label>
+        <select name="categories" id="categories">
+					<option value="rent">Aluguel</option>
+          <option value="internet">Internet</option>
+          <option value="cellphone">Celular</option>
+          <!-- and more categories -->
+        </select>
+        <!--  </div> -->
+				
+        <input
+          type="string"
+          name="description"
+          id="description"
+          placeholder="Description"
+					/>
+        <select name="I/O" id="input-output">
+          <option value="input">Input</option>
+          <option value="output">Output</option>
+        </select>
 
-</body>
-
+        <button type="" id="addEntry" onclick="addNewEntry()" value="" >Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </section>
+		<script>document.getElementById('date').value = new Date().toISOString().slice(0, 10);</script>
+  </body>
 </html>
