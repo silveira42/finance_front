@@ -4,44 +4,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./script.js"></script>
-		
+    <title>Adicionar registro</title>
+    <link rel="stylesheet" href="style.css">
   </head>
-
-  <body style="background-color: #1c1b24">
-    <section>
-      <form id="form">
-        <input type="text" name="name" id="name" placeholder="Name" />
-        <input type="date" name="date" id="date" placeholder="Date" />
-        <input type="number" name="value" id="value" placeholder="Value" />
-        <input type="string" name="store" id="store" placeholder="Store" />
-				
-        <!--    <div> -->
-        <label for="categories">Category</label>
-        <select name="categories" id="categories">
-					<option value="rent">Aluguel</option>
-          <option value="internet">Internet</option>
-          <option value="cellphone">Celular</option>
-          <!-- and more categories -->
-        </select>
-        <!--  </div> -->
-				
-        <input
-          type="string"
-          name="description"
-          id="description"
-          placeholder="Description"
-					/>
-        <select name="I/O" id="input-output">
-          <option value="input">Input</option>
-          <option value="output">Output</option>
-        </select>
-
-        <button type="" id="addEntry" onclick="addNewEntry()" value="" >Submit</button>
-        <button type="reset">Reset</button>
-      </form>
-    </section>
-		<script>document.getElementById('date').value = new Date().toISOString().slice(0, 10);</script>
-  </body>
+  <body onload="getCategories()">
+    <main>
+      <article>
+        <form id="entryForm" action="">
+          <section class="container">
+            <div class="container-item">
+              <h1>Insira sua entrada ou saída</h1>
+            </div>
+          </section>
+          <section class="container">
+            <div class="container-item">
+              <label for="date">Data:</label>
+              <input type="date" name="date" id="date"/>
+            </div>
+            <div class="container-item">
+              <label for="input_output">Entrada ou saída:</label>
+              <select name="input_output" id="input_output">
+                <option value="1">Entrada</option>
+                <option value="0">Saída</option>
+              </select>
+            </div>
+            <div class="container-item">
+              <label for="category">Categoria:</label>
+              <select name="category" id="category"></select>
+            </div>
+          </section>
+          <section class="container">
+            <div class="container-item">
+              <label for="name">Nome:</label>
+              <input type="text" name="name" id="name" placeholder="Nome" />
+            </div>
+            <div class="container-item">
+              <label for="value">Valor:</label>
+              <input type="number" name="value" id="value" placeholder="Valor" />
+            </div>
+            <div class="container-item">
+              <label for="store">Loja:</label>
+              <input type="string" name="store" id="store" placeholder="Loja" />
+            </div>
+            <div class="container-item">
+              <label for="descriptions">Descrição:</label>
+              <input type="string" name="description" id="description" placeholder="Descrição"/>
+            </div>
+          </section>
+          <section class="container">
+            <div class="container-item">
+              <button type="" id="addEntry" value="" >Submit</button>
+            </div>
+            <div class="container-item">
+              <button type="reset">Limpar formulário</button>
+            </div>
+          </section>
+        </form>
+        <section class="container">
+          <div class="container-item">
+            <pre id="results"></pre>
+          </div>
+        </section>
+      </article>
+      <script>document.getElementById('date').value = new Date().toISOString().slice(0, 10);</script>
+      </main>
+    </body>
+    <script src="./script.js"></script>
 </html>

@@ -1,0 +1,27 @@
+body{
+    background-color: #1c1b24;
+    color: #ffffff;      
+}
+
+section, article{
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label, input, select{
+    display: block;
+    padding: 0px 7px;
+    min-width: 150px;
+    min-height: 25px;
+    border-radius: 7px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container-item{
+    
+}
